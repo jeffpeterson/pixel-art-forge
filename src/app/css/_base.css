@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+  background-color: $color-scorpion;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: $font-pixel;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 0.8em;
+  padding-right: 1em;
+  display: inline;
+  position: relative;
+  top: -0.9em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
