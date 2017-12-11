@@ -1,5 +1,5 @@
 import React from 'react';
-import CookieBanner from 'react-cookie-banner';
+// import CookieBanner from 'react-cookie-banner';
 import PixelCanvasContainer from './PixelCanvas';
 import CellSizeContainer from './CellSize';
 import ColorPickerContainer from './ColorPicker';
@@ -286,25 +286,7 @@ export default class App extends React.Component {
         <div className="css-container">
           <CssDisplayContainer />
         </div>
-        {this.state.showCookiesBanner ?
-          <CookieBanner
-            disableStyle
-            message="
-              This website uses cookies. By continuing to use
-              this website you are giving consent to cookies
-              being used. Thank you. "
-            link={{
-              msg: '',
-              url: 'http://www.jvalen.com/pixelarttocss/cookies.html',
-              target: '_blank'
-            }}
-            onAccept={() => this.hideCookiesBanner()}
-            cookie="user-has-accepted-cookies"
-            dismissOnScroll={false}
-          />
-        :
-          null
-        }
+
         <ModalContainer
           type={this.state.modalType}
           isOpen={this.state.modalOpen}
