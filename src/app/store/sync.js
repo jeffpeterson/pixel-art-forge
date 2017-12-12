@@ -4,6 +4,8 @@ export const sync = store => {
   const net = new Network()
   net.connect()
 
+  window.net = net
+
   net.on('message', (peer, msg) => {
     store.dispatch(Object.assign({}, msg, {
       type: `REMOTE_${msg.type}`,
