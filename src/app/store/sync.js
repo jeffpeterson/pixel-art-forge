@@ -1,4 +1,4 @@
-import Network from '../utils/networkutils'
+import Network from '../utils/networkUtils'
 
 window.Network = Network
 
