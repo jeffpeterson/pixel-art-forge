@@ -1,23 +1,27 @@
 import Network from '../utils/networkUtils'
 
-window.Network = Network
+export const sync = store => {
+  const net = new Network()
+  net.connect()
 
-window.net = new Network()
-net.connect()
+  net.on('message', (peer, msg) => {
+    store.dispatch(Object.assign({}, msg, {
+      type: `REMOTE_${msg.type}`,
+    }))
+  })
 
-export const sync = store => next => action => {
+  return next => action => {
 
-  // console.log('ACTION', action)
+    switch (action.type) {
+      case 'CHANGE_DIMENSIONS':
+      // case 'DRAW_CELL':
+      case 'SET_DRAWING':
+      case 'SET_CELL_SIZE':
+      // case 'SET_RESET_GRID':
+      // case 'NEW_PROJECT':
+        net.broadcast(action)
+    }
 
-  switch (action.type) {
-    case 'CHANGE_DIMENSIONS':
-    case 'DRAW_CELL':
-    case 'SET_DRAWING':
-    case 'SET_CELL_SIZE':
-    case 'SET_RESET_GRID':
-    case 'NEW_PROJECT':
-
+    return next(action);
   }
-
-  return next(action);
 }
