@@ -293,6 +293,7 @@ export default function (state = Map(), action) {
     case 'SET_INITIAL_STATE':
       return setInitialState(state);
     case 'CHANGE_DIMENSIONS':
+    case 'REMOTE_CHANGE_DIMENSIONS':
       return changeDimensions(state, action.gridProperty, action.behaviour);
     case 'SET_COLOR_SELECTED':
       return setColorSelected(
@@ -301,6 +302,7 @@ export default function (state = Map(), action) {
     case 'SET_CUSTOM_COLOR':
       return setCustomColor(state, action.customColor);
     case 'DRAW_CELL':
+    case 'REMOTE_DRAW_CELL':
       return drawCell(state, action.id);
     case 'SET_DRAWING':
       return setDrawing(

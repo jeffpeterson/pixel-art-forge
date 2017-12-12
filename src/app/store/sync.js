@@ -16,9 +16,9 @@ export const sync = store => {
 
     switch (action.type) {
       case 'CHANGE_DIMENSIONS':
-      // case 'DRAW_CELL':
-      case 'SET_DRAWING':
-      case 'SET_CELL_SIZE':
+      // case 'SET_DRAWING':
+      // case 'SET_CELL_SIZE':
+      case 'DRAW_CELL':
       // case 'SET_RESET_GRID':
       // case 'NEW_PROJECT':
         net.broadcast(action)

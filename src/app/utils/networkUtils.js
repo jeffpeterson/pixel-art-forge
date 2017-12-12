@@ -73,6 +73,8 @@ export default class Network extends EventEmitter {
   }
 
   message(message) {
+    if (message.from === this.selfInfo.id) return
+
     console.log('Automerge.Connection> receive ' + message.from + ': ' + message.data.toString())
     let contents = JSON.parse(message.data.toString());
     this.emit("message", message.from, contents)
