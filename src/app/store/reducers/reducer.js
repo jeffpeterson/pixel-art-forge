@@ -295,7 +295,8 @@ export default function (state = Map(), action) {
     case 'CHANGE_DIMENSIONS':
     case 'REMOTE_CHANGE_DIMENSIONS':
       return changeDimensions(state, action.gridProperty, action.behaviour);
-    case 'SET_COLOR_SELECTED':
+      case 'SET_COLOR_SELECTED':
+      case 'REMOTE_SET_COLOR_SELECTED':
       return setColorSelected(
         state, action.newColorSelected, action.paletteColorPosition
       );

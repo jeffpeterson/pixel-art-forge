@@ -19,6 +19,7 @@ export const sync = store => {
       // case 'SET_DRAWING':
       // case 'SET_CELL_SIZE':
       case 'DRAW_CELL':
+      case 'SET_COLOR_SELECTED':
       // case 'SET_RESET_GRID':
       // case 'NEW_PROJECT':
         net.broadcast(action)
